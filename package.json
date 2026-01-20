@@ -1,0 +1,31 @@
+{
+  "name": "snake.io-server",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "yarn --cwd snake-io-frontend/ && yarn --cwd snake-io-frontend/ build",
+    "start": "babel-node server.js",
+    "dev": "DEBUG=chat:* nodemon --ignore 'client/' --exec babel-node server.js"
+  },
+  "dependencies": {
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "morgan": "~1.9.1",
+    "socket.io": "^2.3.0",
+    "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "nodemon": "^2.0.2"
+  },
+  "engines": {
+    "yarn": "1.x"
+  },
+  "cacheDirectories": [
+    "snake-io-frontend/node_modules",
+    "node_modules"
+  ]
+}
